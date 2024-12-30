@@ -1,5 +1,8 @@
 106. How To Perform Right Click Action (Context Click) In Selenium WebDriver?
 
+To perform a right-click (context click) action in Selenium WebDriver, you can use the Actions class. 
+The contextClick() method in the Actions class performs a right-click action at a specified location or on a specified web element.
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
