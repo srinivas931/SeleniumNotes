@@ -1,6 +1,7 @@
 108. How To Perform Drag And Drop Action in Selenium WebDriver?
 
-To perform a drag and drop action in Selenium WebDriver, you can use the Actions class. Selenium provides the dragAndDrop() method to move elements from one location to another.
+To perform a drag and drop action in Selenium WebDriver, you can use the Actions class. 
+Selenium provides the dragAndDrop() method to move elements from one location to another.
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
