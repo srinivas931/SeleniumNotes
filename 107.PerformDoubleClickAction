@@ -1,0 +1,32 @@
+107. How To Perform Double Click Action In Selenium WebDriver?
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+
+public class DoubleClickExample {
+    public static void main(String[] args) {
+        // Set the path to the ChromeDriver executable
+        System.setProperty("webdriver.chrome.driver", "path/to/chromedriver");
+
+        // Initialize WebDriver
+        WebDriver driver = new ChromeDriver();
+
+        // Open a website
+        driver.get("https://www.example.com");
+
+        // Find the element to double-click on
+        WebElement element = driver.findElement(By.id("elementID"));
+
+        // Initialize Actions class
+        Actions actions = new Actions(driver);
+
+        // Perform double-click action on the element
+        actions.doubleClick(element).perform();
+
+        // Close the browser
+        driver.quit();
+    }
+}
