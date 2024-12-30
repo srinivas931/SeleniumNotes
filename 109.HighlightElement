@@ -1,0 +1,50 @@
+109. How To Highlight Element Using Selenium WebDriver?
+
+To highlight an element in Selenium WebDriver, you can use JavaScript execution to apply temporary styles (such as a border) to the element. 
+This is useful for debugging or visually verifying the element being interacted with.
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class HighlightElement {
+    public static void main(String[] args) {
+        // Set the path to the ChromeDriver executable
+        System.setProperty("webdriver.chrome.driver", "path/to/chromedriver");
+
+        // Initialize WebDriver
+        WebDriver driver = new ChromeDriver();
+
+        // Open a website
+        driver.get("https://www.example.com");
+
+        // Find the element to highlight
+        WebElement element = driver.findElement(By.id("elementID"));
+
+        // Cast WebDriver to JavascriptExecutor
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+
+        // Highlight the element by setting a red border
+        js.executeScript("arguments[0].style.border='3px solid red'", element);
+
+        // Pause to observe the highlighted element (optional)
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        // Example 2: Highlight multiple elements
+        List<WebElement> elements = driver.findElements(By.className("elementClass"));
+        for (WebElement element : elements) {
+            js.executeScript("arguments[0].style.border='3px solid blue'", element);
+            Thread.sleep(500); // Pause briefly for each element (optional)
+        }
+
+
+        // Close the browser
+        driver.quit();
+    }
+}
